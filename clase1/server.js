@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 
+const port = 3000;
+
 app.get('/', function (req, res) {
-  res.status(200).json({
+  res
+    .status(200)
+    .json({
       message: 'hello word',
       status: 200,
       peliculas: [
@@ -12,9 +16,9 @@ app.get('/', function (req, res) {
               image: 'http://imagen.jpg'
           }
       ]
-  });
+    });
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(port, function () {
+  console.log(`Example app listening on port ${port}!`);
 });
